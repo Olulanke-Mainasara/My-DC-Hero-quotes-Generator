@@ -1,3 +1,4 @@
+//Quote Generator Function
 function quoteGenerator() {
     //Declaring the variables to be used in the function
     const quoteGen = document.getElementById("quoteGenerator");
@@ -97,3 +98,26 @@ function quoteGenerator() {
 
 
 quoteGenerator();
+
+
+//FAQ Accordion Function
+function faqAccordion() {
+    const question = document.querySelectorAll(".question");
+
+    question.forEach(questionBox => {
+        questionBox.addEventListener("click", function (e) {
+            if (e.target.parentElement.classList.contains("active")) {
+                e.target.parentElement.classList.remove("active");
+            }
+            else {
+                question.forEach(remQuestion => {
+                    remQuestion.parentElement.classList.remove("active");
+                    e.target.parentElement.classList.add("active");
+                })
+            }
+        }) 
+    });
+}
+
+
+faqAccordion();
