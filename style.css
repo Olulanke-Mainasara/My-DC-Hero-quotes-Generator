@@ -196,7 +196,7 @@ body {
     }
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 600px) {
     .quote-container {
         width: 94.2%;
         margin-left: 0;
@@ -238,5 +238,15 @@ body {
 
     .active .question {
         font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 398px) {
+    .question::after {
+        display: none;
+    }
+
+    .answer {
+        font-size: 14px;
     }
 }
