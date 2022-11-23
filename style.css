@@ -15,11 +15,15 @@ body {
     width: 100%;
     height: 100%;
     position: relative;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .row {
     width: 100%;
     height: 100%;
+    scroll-snap-align: start;
 }
 
 #quoteGenerator {
@@ -82,6 +86,79 @@ body {
     color: #ff004f;
 }
 
+/*--------------------------------FAQ Accordion-----------------------------------*/
+
+#dcFaq {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#faqContainer {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px;
+    color: white;
+    border: 1px solid #ff004f;
+    border-radius: 30px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+#faqContainer h1 {
+    margin: 0 auto 30px;
+}
+
+.qSection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.question {
+    padding-bottom: 20px;
+    border-bottom: 1px solid white;
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.question::after {
+    content: "+";
+    position: absolute;
+    top: -5px;
+    right: 20px;
+    font-size: 20px;
+    transition: .5s;
+}
+
+.answer {
+    font-size: 20px;
+    height: 0px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.active .question {
+    font-size: 16px;
+}
+
+.active .answer {
+    height: 140px;
+}
+
+.active .question::after {
+    content: "x";
+    font-size: 20px;
+}
+
+
+
+
+
+
 @media only screen and (max-width: 1024px) {
     .quote-container {
         width: 53.4%;
@@ -106,6 +183,10 @@ body {
     .quote-container button:hover {
         background: #ff004f;
         color: white;
+    }
+
+    #faqContainer {
+        width: 70%;
     }
 }
 
@@ -136,6 +217,26 @@ body {
     }
 
     .quote-container button {
+        font-size: 15px;
+    }
+
+    #faqContainer {
+        width: 90%;
+    }
+
+    #faqContainer h1 {
+        font-size: 24px;
+    }
+
+    .question {
+        font-size: 15px;
+    }
+
+    .answer {
+        font-size: 17px;
+    }
+
+    .active .question {
         font-size: 15px;
     }
 }
