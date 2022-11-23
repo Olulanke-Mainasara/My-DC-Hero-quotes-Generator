@@ -100,6 +100,7 @@ function quoteGenerator() {
 quoteGenerator();
 
 
+
 //FAQ Accordion Function
 function faqAccordion() {
     const question = document.querySelectorAll(".question");
